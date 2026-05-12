@@ -1,0 +1,12 @@
+# pnpm 11+ config (the only place these specific keys are honored).
+# Skip the auto `pnpm install` that runs before every script so `pnpm test`
+# doesn't fail when build approvals are pending.
+verifyDepsBeforeRun: false
+
+# Pre-approve build scripts we trust. esbuild ships native binaries; vitest
+# pulls it in transitively.
+onlyBuiltDependencies:
+  - esbuild
+
+allowBuilds:
+  esbuild: set this to true or false
