@@ -13,7 +13,6 @@
 // Replace the signature below with the one from NeetCode/LeetCode.
 // The default export is what the test file imports as `solve`.
 export function containsDuplicate(nums: number[]): boolean {
-  if (nums.length <= 1) return false;
   const seen = new Set<number>();
   for (const n of nums) {
     if (seen.has(n)) {
